@@ -17,7 +17,7 @@ jobs:
     permissions:
       contents: read
     if: |
-      ${{ github.ref_name == 'master' }}
+      ${{ github.ref_name == 'main' }}
     runs-on: ubuntu-latest
     steps:
       - shell: bash
@@ -28,7 +28,7 @@ jobs:
    name: Test2
    permissions:
      contents: read
-   if: github.ref_name == 'master'
+   if: github.ref_name == 'main'
    runs-on: ubuntu-latest
    steps:
      - shell: bash
