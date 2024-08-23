@@ -18,27 +18,33 @@ jobs:
       contents: read
     if: |
       ${{ github.ref_name == 'master' }}
-    shell: bash
-    run: |
-      echo 'Test1 ran'
+    runs-on ubuntu-latest
+    steps:
+      shell: bash
+      run: |
+        echo 'Test1 ran'
 
   test2:
    name: Test2
    permissions:
      contents: read
    if: github.ref_name == 'master'
-   shell: bash
-   run: |
-     echo 'Test2 ran'
+   runs-on ubuntu-latest
+   steps:
+     shell: bash
+     run: |
+       echo 'Test2 ran'
 
 
   test3:
    name: Test3
    permissions:
      contents: read
-   shell: bash
-   run: |
-     echo "Test3: ran on $NAME"
-   env:
-     NAME: "${{ github.ref_name }}"
+   runs-on ubuntu-latest
+   steps:
+     shell: bash
+     run: |
+       echo "Test3: ran on $NAME"
+     env:
+       NAME: "${{ github.ref_name }}"
 
