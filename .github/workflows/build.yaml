@@ -48,3 +48,16 @@ jobs:
        env:
          NAME: "${{ github.ref_name }}"
 
+  test4:
+    name: Test4
+    permissions:
+      contents: read
+    if: |
+      ${{ github.ref_name == github.event.repository.default_branch }}
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo 'Test4 ran'
+
+
